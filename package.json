@@ -12,6 +12,7 @@
         "Firefox ESR",
         "not ie < 9"
     ],
+    
     "dependencies": {
         "@babel/polyfill": "^7.0.0",
         "@googlemaps/js-api-loader": "^1.16.8",

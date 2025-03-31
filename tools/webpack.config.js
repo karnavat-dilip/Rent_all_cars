@@ -3,9 +3,11 @@ import webpack from 'webpack';
 import AssetsPlugin from 'assets-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-const Dotenv = require('dotenv-webpack');
+import Dotenv from 'dotenv-webpack';
+import { fileURLToPath } from 'url';
 
-import pkg from '../package.json';
+
+import pkg from '../package.json'
 
 const isDebug = !process.argv.includes('--release');
 const isVerbose = process.argv.includes('--verbose');
@@ -15,7 +17,8 @@ const isAnalyze = process.argv.includes('--analyze') || process.argv.includes('-
 // Common configuration chunk to be used for both
 // client-side (client.js) and server-side (server.js) bundles
 // -----------------------------------------------------------------------------
-
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 const config = {
   context: path.resolve(__dirname, '..'),
 
